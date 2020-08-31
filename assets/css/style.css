@@ -1,0 +1,188 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:700&display=swap');
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	background-color: hsl(240, 78%, 98%);
+	color: hsl(232, 13%, 33%);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-family: 'Montserrat', sans-serif;
+	text-align: center;
+	min-height: 100vh;
+}
+
+body::before {
+    content: '';
+    background-image: url('/assets/images/bg-top.svg');
+    background-repeat: no-repeat;
+    background-position: top right;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: -1;
+}
+
+body::after {
+    content: '';
+    background-image: url('/assets/images/bg-bottom.svg');
+    background-repeat: no-repeat;
+    background-position: bottom left;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: -1;
+}
+
+button {
+    cursor: pointer;
+}
+
+.container {
+    margin: auto;
+    max-width: 100%;
+    width: 1200px;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+h2 {
+    color: hsl(233, 13%, 49%);
+    font-size: 32px;
+}
+
+.toggle-container {
+    color: hsl(234, 14%, 74%);
+    margin-bottom: 40px;
+}
+
+.pricing-box {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+}
+
+.pricing-box .monthly {
+    display: none;
+}
+
+.show-monthly .pricing-box .monthly {
+    display: block;
+}
+
+.show-monthly .pricing-box .annually {
+    display: none;
+}
+
+.pricing-box p {
+    font-size: 64px;
+    margin: 0;
+    color: hsl(232, 13%, 33%);
+    width: 250px;
+}
+
+.pricing-box ul {
+    padding: 0;
+    list-style: none;
+    border-top: 1px solid hsl(234, 14%, 74%);
+}
+
+.pricing-box ul li {
+    border-bottom: 1px solid hsl(234, 14%, 74%);
+	font-size: 14px;
+	padding: 15px 0;
+}
+
+.pricing-box button {
+    background-image: linear-gradient(to right,	hsl(236, 72%, 79%),hsl(237, 63%, 64%));
+    border: none;
+	border-radius: 5px;
+	color: #fff;
+	font-family: 'Montserrat', sans-serif;
+	letter-spacing: 2px;
+	padding: 15px;
+	margin-top: 10px;
+	width: 100%;
+	text-transform: uppercase;
+}
+
+.pricing-box.pricing-main {
+    background-image: linear-gradient(to right,	hsl(236, 72%, 79%),hsl(237, 63%, 64%));
+    color: #fff; 
+    transform: scale(1.15);
+}
+
+.pricing-box.pricing-main p {
+    color: #ffffff;
+}
+
+.pricing-box.pricing-box.pricing-main > * {
+	transform: scale(0.869);
+}
+
+.pricing-box.pricing-main button {
+    background-image: none;
+    color: hsl(237, 63%, 64%);
+}
+
+.toggle-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.toggle-container label {
+    background-image: linear-gradient(to right,	hsl(236, 72%, 79%),hsl(237, 63%, 64%));
+    display: inline-block;
+    margin: 0 10px;
+    height: 30px;
+    width: 60px;
+    border-radius: 50px;
+    position: relative;
+    cursor: pointer;
+}
+
+.toggle-container input {
+	position: absolute;
+	left: -9999px;
+}
+
+.toggle-container label .circle {
+    border-radius: 50%;
+    background-color: #ffffff;
+    height: 25px;
+    width: 25px;
+    position: absolute;
+    top: 2.5px;
+    left: 2.5px;
+    transition: transform 0.4s ease;
+}
+
+.toggle-container input:checked + label .circle {
+    transform: translateX(30px);
+}
+
+@media screen and (max-width: 930px) {
+    .flex {
+        flex-direction: column;
+    }
+    .pricing-box.pricing-main {
+        transform: scale(1);
+    }
+    .pricing-box.pricing-main > * {
+        transform: scale(1);
+    }
+}
